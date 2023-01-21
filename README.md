@@ -32,6 +32,8 @@ Param: `{ username: <username> }`
 
 Creates a user with <username>. Returning user object. If user does not exists it is created.
 
+### GET /shop
+Resolves to items available in the shop.
 ### GET /items
 Resolves the current user's items
 
@@ -45,6 +47,9 @@ Resolves the current user's pokemons
 ### PUT /pokemons
 Param: `{name: <item id of item being purchased>}`
 Update current user's pokemon nickname. Resolves to pokemon object
+
+### GET /user
+Resolves to current user.
 
 
 
