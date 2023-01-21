@@ -7,7 +7,7 @@ using `prop-types`.
 
 ### Checkout
 
-1. `git pull`
+1. `git pull https://github.com/gumacahin/poketest`
 
 ### Server
 
