@@ -1,5 +1,8 @@
 # Poké Test
 
+Poke Test server/client. Server is ExpressJS/Typecript. Client is CRA bootstrapped
+using `prop-types`.
+
 ## Getting Started
 
 ### Checkout
