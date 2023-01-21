@@ -4,6 +4,7 @@ import { getStarters, validateUsername } from './utils';
 import { isEmpty } from 'lodash';
 import { PokemonClient } from 'pokenode-ts';
 import cors from 'cors';
+import helmet from 'helmet';
 
 function authenticate(req: any, res: any, next: NextFunction) {
   // TODO: This will be our bearer token should we proceed with proper auth.
@@ -25,6 +26,8 @@ function createApp(db: any) {
 
   app.use(bodyParser.json());
   app.use(cors());
+  app.use(helmet());
+  app.disable('x-powered-by');
 
   // define a route handler for the default home page
   app.get('/', authenticate, (req, res) => {
@@ -289,6 +292,11 @@ function createApp(db: any) {
       return;
     }
     res.send({ user });
+  });
+
+  // custom 404
+  app.use((req, res, next) => {
+    res.status(404).send({ error: { title: 'Not found' } });
   });
 
   return app;
